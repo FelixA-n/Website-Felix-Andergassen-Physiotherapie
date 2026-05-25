@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="light" lang="de">
+<head>
+    <meta charset="utf-8"/>
+<!-- Weiche: Falls ein PC direkt auf der Mobil-Seite landet -->
+<script>
+    if (window.innerWidth > 768 && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var page = window.location.pathname.split("/").pop();
+        if (!page) page = "index.html";
+        window.location.replace("../desktop/" + page);
+    }
+</script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Leistungen &amp; Preise - Felix Andergassen Physiotherapie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ffffff",
+                        "on-secondary-fixed": "#002115",
+                        "on-tertiary-fixed": "#1f1b13",
+                        "background": "#f4fafd",
+                        "secondary-container": "#b9ebd2",
+                        "surface-tint": "#30647d",
+                        "tertiary-fixed-dim": "#cfc5b9",
+                        "on-secondary-fixed-variant": "#214f3d",
+                        "on-surface": "#161d1f",
+                        "tertiary": "#635c52",
+                        "on-primary-fixed": "#001e2b",
+                        "primary-fixed-dim": "#9bcdea",
+                        "tertiary-container": "#7c756a",
+                        "primary-container": "#4a7c96",
+                        "surface-dim": "#d4dbdd",
+                        "primary": "#2f637c",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#dde4e6",
+                        "surface-bright": "#f4fafd",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#eef5f7",
+                        "on-primary-fixed-variant": "#124c64",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#c2e8ff",
+                        "on-tertiary-container": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#3e6b58",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#a1d1b9",
+                        "on-background": "#161d1f",
+                        "inverse-primary": "#9bcdea",
+                        "inverse-surface": "#2b3234",
+                        "on-surface-variant": "#41484c",
+                        "on-tertiary-fixed-variant": "#4c463c",
+                        "surface-container-highest": "#dde4e6",
+                        "outline-variant": "#c0c7cd",
+                        "secondary": "#3a6754",
+                        "secondary-fixed": "#bcedd5",
+                        "outline": "#71787d",
+                        "surface": "#f4fafd",
+                        "surface-container-high": "#e2e9ec",
+                        "surface-container": "#e8eff1",
+                        "tertiary-fixed": "#ebe1d4",
+                        "inverse-on-surface": "#ebf2f4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "stack-lg": "48px",
+                        "stack-sm": "8px",
+                        "stack-md": "24px",
+                        "section-padding": "80px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["manrope"],
+                        "body-md": ["manrope"],
+                        "headline-lg": ["manrope"],
+                        "body-lg": ["manrope"],
+                        "label-md": ["manrope"],
+                        "label-sm": ["manrope"],
+                        "headline-xl": ["manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-drawer {
+            transform: translateX(0) !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-4 bg-surface/80 backdrop-blur-md shadow-sm">
+    <div class="flex items-center gap-2">
+        <button class="p-2 text-primary hover:bg-surface-container-high transition-colors rounded-full md:hidden" id="menu-btn">
+            <span class="material-symbols-outlined" data-icon="menu">menu</span>
+        </button>
+        <span class="text-headline-md font-headline-md font-bold text-primary">Felix Andergassen</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-6">
+        <a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="index.html">Home</a>
+        <a class="text-primary font-bold transition-colors" href="leistungen.html">Leistungen</a>
+        <a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="ueber-mich.html">Über mich</a>
+        <a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="text-label-md font-label-md bg-primary text-on-primary px-4 py-2 rounded-full hover:opacity-90 shadow-sm active:scale-95 duration-150" href="https://www.doctolib.de/heilpraktiker-physiotherapie/obertshausen/felix-andergassen?utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" target="_blank">
+        Termin buchen
+    </a>
+</header>
+
+<!-- NavigationDrawer (Mobile Sidebar) -->
+<div class="fixed inset-0 bg-black/50 z-[55] opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-overlay"></div>
+<nav class="fixed inset-y-0 left-0 z-[60] flex flex-col py-6 bg-surface w-4/5 max-w-sm rounded-r-xl shadow-xl -translate-x-full transition-transform duration-300 ease-in-out" id="nav-drawer">
+    <div class="px-6 mb-8 flex justify-between items-center">
+        <span class="text-headline-md font-headline-md text-primary">Physiotherapie</span>
+        <button class="text-on-surface-variant" id="close-drawer">
+            <span class="material-symbols-outlined" data-icon="close">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col gap-2">
+        <a class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-4 hover:bg-surface-container-highest rounded-full transition-colors" href="index.html">
+            <span class="material-symbols-outlined" data-icon="home">home</span>
+            <span class="text-body-md font-body-md">Home</span>
+        </a>
+        <a class="bg-secondary-container text-on-secondary-container rounded-full px-4 py-3 mx-2 flex items-center gap-4 font-bold" href="leistungen.html">
+            <span class="material-symbols-outlined" data-icon="rehabilitation">restore</span>
+            <span class="text-body-md font-body-md">Leistungen</span>
+        </a>
+        <a class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-4 hover:bg-surface-container-highest rounded-full transition-colors" href="ueber-mich.html">
+            <span class="material-symbols-outlined" data-icon="person">person</span>
+            <span class="text-body-md font-body-md">Über mich</span>
+        </a>
+        <a class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-4 hover:bg-surface-container-highest rounded-full transition-colors" href="kontakt.html">
+            <span class="material-symbols-outlined" data-icon="mail">mail</span>
+            <span class="text-body-md font-body-md">Kontakt</span>
+        </a>
+    </div>
+</nav>
+
+<main class="flex-grow pt-24 pb-12 px-4 max-w-4xl mx-auto w-full space-y-12">
+    <!-- Hero Title -->
+    <section class="text-center space-y-4">
+        <h2 class="text-headline-lg font-headline-lg text-primary">Leistungen &amp; Preise</h2>
+        <p class="text-body-md text-on-surface-variant max-w-md mx-auto">
+            Individuelle Betreuung für Ihre Gesundheit. Transparent, professionell und zielgerichtet.
+        </p>
+    </section>
+
+    <!-- Meine Leistungen Section -->
+    <section class="space-y-6 mt-12">
+        <h3 class="text-headline-md font-headline-md border-l-4 border-secondary pl-4">Meine Leistungen</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Krankengymnastik -->
+            <div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 card-animate">
+                <span class="material-symbols-outlined text-secondary mb-4" data-icon="exercise" style="font-size: 32px;">exercise</span>
+                <h4 class="text-headline-md font-headline-md mb-2">Krankengymnastik</h4>
+                <p class="text-body-md text-on-surface-variant">Gezielte Übungen zur Verbesserung der Beweglichkeit und Kräftigung der Muskulatur.</p>
+            </div>
+            <!-- Manuelle Therapie -->
+            <div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 card-animate">
+                <span class="material-symbols-outlined text-secondary mb-4" data-icon="hand_bones" style="font-size: 32px;">hand_bones</span>
+                <h4 class="text-headline-md font-headline-md mb-2">Manuelle Therapie</h4>
+                <p class="text-body-md text-on-surface-variant">Spezielle Handgrifftechniken zur Behandlung von Funktionsstörungen des Bewegungsapparates.</p>
+            </div>
+            <!-- Massage -->
+            <div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 card-animate">
+                <span class="material-symbols-outlined text-secondary mb-4" data-icon="spa" style="font-size: 32px;">spa</span>
+                <h4 class="text-headline-md font-headline-md mb-2">Massage</h4>
+                <p class="text-body-md text-on-surface-variant">Klassische Massagetechniken zur Lösung von Verspannungen und Förderung der Durchblutung.</p>
+            </div>
+            <!-- Lymphdrainage -->
+            <div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 card-animate">
+                <span class="material-symbols-outlined text-secondary mb-4" data-icon="fluid_balance" style="font-size: 32px;">fluid_balance</span>
+                <h4 class="text-headline-md font-headline-md mb-2">Lymphdrainage</h4>
+                <p class="text-body-md text-on-surface-variant">Sanfte Entstauungstherapie zur Reduktion von Schwellungen und Ödemen.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sektoraler Heilpraktiker -->
+    <section class="bg-primary-container text-on-primary-container p-6 rounded-xl shadow-md">
+        <div class="flex items-start gap-4 mb-4">
+            <span class="material-symbols-outlined flex-shrink-0" data-icon="verified" style="font-size: 40px;">verified</span>
+            <div>
+                <h3 class="text-headline-md font-headline-md">Sektoraler Heilpraktiker</h3>
+                <p class="text-label-md opacity-90">Physiotherapie</p>
+            </div>
+        </div>
+        <p class="text-body-md font-medium italic mb-4">„Der direkte Weg zum Physiotherapeuten.“</p>
+        <p class="text-body-md leading-relaxed">
+            Als sektoraler Heilpraktiker für Physiotherapie darf ich Patienten ohne ärztliche Verordnung untersuchen und behandeln. Das spart Ihnen den Umweg über den Arzt und ermöglicht einen schnellen Behandlungsbeginn.
+        </p>
+        <div class="mt-8 pt-6 border-t border-on-primary-container/20">
+            <p class="text-label-sm leading-relaxed opacity-90">
+                <span class="font-bold block mb-2 uppercase tracking-widest text-[10px]">Hinweis zur Abrechnung:</span>
+                Eine Erstattung der Kosten durch Ihre Versicherung ist in der Regel möglich, sofern Sie über eine entsprechende <b>Heilpraktiker-Zusatzversicherung</b> verfügen oder dieser Leistungsbaustein für <b>sektorale Heilpraktiker der Physiotherapie</b> Teil Ihres privaten Versicherungsvertrages ist. Bitte prüfen Sie dies vorab mit Ihrem Versicherer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Qualität braucht Zeit Section -->
+    <section class="bg-surface-container-low p-6 rounded-xl border border-outline-variant">
+        <h3 class="text-headline-md font-headline-md mb-6 text-center">Qualität braucht Zeit</h3>
+        <div class="space-y-6">
+            <p class="text-body-md text-on-surface-variant leading-relaxed text-center">
+                Bei mir gibt es keine Massenabfertigung im 20-Minuten-Takt. Für Ihre Gesundheit und eine nachhaltige Therapie buche ich mindestens 40-60 Minuten.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-secondary bg-secondary-container p-2 rounded-full flex-shrink-0" data-icon="schedule">schedule</span>
+                    <p class="text-body-md"><strong>Reguläre Behandlungen:</strong> 40 – 60 Minuten für maximale Qualität und Ruhe.</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <span class="material-symbols-outlined text-secondary bg-secondary-container p-2 rounded-full flex-shrink-0" data-icon="medical_services">medical_services</span>
+                    <p class="text-body-md"><strong>Manuelle Lymphdrainage:</strong> Individuell auf den medizinischen Bedarf angepasst.</p>
+                </div>
+            </div>
+            <p class="font-semibold text-primary pt-4 italic text-center text-body-md">
+                Weil Ihre Gesundheit Aufmerksamkeit verdient.
+            </p>
+        </div>
+    </section>
+
+    <!-- Preisübersicht Section -->
+    <section class="space-y-6">
+        <h3 class="text-headline-md font-headline-md text-center">Preisübersicht</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a class="flex items-center justify-between bg-surface-container-lowest p-4 rounded-xl border border-outline-variant hover:bg-surface-container-high transition-colors card-animate" href="https://drive.google.com/file/d/1eQQR1wBOgHdGyMjj-Dz683LssEZKI2r5/view?usp=drive_link" target="_blank">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary" data-icon="picture_as_pdf">picture_as_pdf</span>
+                    <span class="text-label-md font-label-md text-left">Preisliste Privatpatienten</span>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant" data-icon="download">download</span>
+            </a>
+            <a class="flex items-center justify-between bg-surface-container-lowest p-4 rounded-xl border border-outline-variant hover:bg-surface-container-high transition-colors card-animate" href="#" target="_blank">
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary" data-icon="picture_as_pdf">picture_as_pdf</span>
+                    <span class="text-label-md font-label-md text-left">Preisliste Selbstzahler</span>
+                </div>
+                <span class="material-symbols-outlined text-on-surface-variant" data-icon="download">download</span>
+            </a>
+        </div>
+        <p class="mt-4 text-center text-label-sm text-on-surface-variant italic leading-relaxed px-4 max-w-2xl mx-auto">
+            Die Abrechnung erfolgt auf Grundlage der Gebührenübersicht für Therapeuten (GebüTh). Bitte beachten Sie, dass die Erstattung durch private Krankenversicherungen oder Zusatzversicherungen vom jeweiligen individuellen Versicherungstarif abhängt und unter Umständen nur anteilig oder bis zu den vertraglich vereinbarten Höchstsätzen erfolgt.
+        </p>
+        <div class="bg-surface-container p-6 rounded-xl text-center max-w-md mx-auto">
+            <p class="text-body-md text-on-surface-variant mb-6">
+                Buchen Sie Ihren Termin bequem online über Doctolib.
+            </p>
+            <a class="inline-block w-full bg-primary text-on-primary py-4 rounded-full font-bold text-label-md shadow-md hover:opacity-90 active:scale-95 transition-all" href="https://www.doctolib.de/heilpraktiker-physiotherapie/obertshausen/felix-andergassen?utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" target="_blank">
+                Termin bei Doctolib buchen
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center gap-gutter px-4 py-stack-lg bg-surface-container-low border-t border-outline-variant mt-12">
+    <span class="text-label-md font-semibold text-on-surface text-center">Felix Andergassen Physiotherapie | Obertshausen</span>
+    <div class="flex gap-4 flex-wrap justify-center">
+        <a class="text-on-surface-variant text-label-sm hover:text-primary transition-colors" href="https://itrk.legal/1z14.0.18aZ-de.html" target="_blank">Impressum</a>
+        <a class="text-on-surface-variant text-label-sm hover:text-primary transition-colors" href="https://itrk.legal/1z14.8V.18aZ.html">Datenschutz</a>
+        <a class="text-on-surface-variant text-label-sm hover:text-primary transition-colors" href="kontakt.html">Kontakt</a>
+    </div>
+    <div class="pt-4 border-t border-outline-variant w-full text-center">
+        <span class="text-label-sm text-outline-variant">© 2026 Felix Andergassen Physiotherapie.</span>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const closeDrawer = document.getElementById('close-drawer');
+    const navDrawer = document.getElementById('nav-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+
+    function toggleMenu() {
+        navDrawer.classList.toggle('-translate-x-full');
+        navDrawer.classList.toggle('active-nav-drawer');
+        overlay.classList.toggle('opacity-0');
+        overlay.classList.toggle('pointer-events-none');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    closeDrawer.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Smooth entrance animation for cards
+    const cards = document.querySelectorAll('.card-animate');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        observer.observe(card);
+    });
+</script>
+</body>
+</html>

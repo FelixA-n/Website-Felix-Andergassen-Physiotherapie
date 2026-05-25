@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weiterleitung...</title>
+    <script>
+        // Prüft, ob es ein Mobilgerät ist oder der Bildschirm schmaler als 768 Pixel ist
+        if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.replace("Mobile/index.html");
+        } else {
+            window.location.replace("Desktop/index.html");
+        }
+    </script>
+</head>
+<body>
+    <p>Falls Sie nicht automatisch weitergeleitet werden, klicken Sie bitte hier:</p>
+    <ul>
+        <li><a href="Desktop/index.html">Desktop-Version</a></li>
+        <li><a href="Mobile/index.html">Mobile Version</a></li>
+    </ul>
+</body>
+</html>

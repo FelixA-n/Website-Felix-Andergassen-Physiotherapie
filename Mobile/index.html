@@ -1,0 +1,328 @@
+<!DOCTYPE html><html class="light" lang="de" style=""><head>
+<meta charset="utf-8">
+<!-- Weiche: Falls ein PC direkt auf der Mobil-Seite landet -->
+<script>
+    if (window.innerWidth > 768 && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var page = window.location.pathname.split("/").pop();
+        if (!page) page = "index.html";
+        window.location.replace("../Desktop/" + page);
+    }
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Felix Andergassen Physiotherapie | Obertshausen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ffffff",
+                        "on-tertiary-fixed": "#1f1b13",
+                        "surface-tint": "#30647d",
+                        "primary-fixed": "#c2e8ff",
+                        "on-tertiary-container": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e2e9ec",
+                        "surface": "#f4fafd",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#002115",
+                        "primary-fixed-dim": "#9bcdea",
+                        "on-surface-variant": "#41484c",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#7c756a",
+                        "primary": "#2f637c",
+                        "surface-dim": "#d4dbdd",
+                        "inverse-primary": "#9bcdea",
+                        "inverse-surface": "#2b3234",
+                        "on-secondary-container": "#3e6b58",
+                        "surface-container-highest": "#dde4e6",
+                        "outline": "#71787d",
+                        "on-tertiary-fixed-variant": "#4c463c",
+                        "secondary-fixed-dim": "#a1d1b9",
+                        "tertiary": "#635c52",
+                        "on-primary-fixed": "#001e2b",
+                        "on-background": "#161d1f",
+                        "on-primary-fixed-variant": "#124c64",
+                        "surface-variant": "#dde4e6",
+                        "surface-bright": "#f4fafd",
+                        "surface-container": "#e8eff1",
+                        "inverse-on-surface": "#ebf2f4",
+                        "outline-variant": "#c0c7cd",
+                        "secondary-fixed": "#bcedd5",
+                        "primary-container": "#4a7c96",
+                        "error": "#ba1a1a",
+                        "background": "#f4fafd",
+                        "on-secondary-fixed-variant": "#214f3d",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#b9ebd2",
+                        "tertiary-fixed-dim": "#cfc5b9",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eef5f7",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#161d1f",
+                        "tertiary-fixed": "#ebe1d4",
+                        "secondary": "#3a6754"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "unit": "8px",
+                        "section-padding": "80px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f4fafd;
+            color: #161d1f;
+        }
+        .backdrop-blur-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-4 bg-surface/80 backdrop-blur-nav shadow-sm" id="top-app-bar">
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container-high transition-colors rounded-full text-primary md:hidden" id="menu-toggle">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="text-headline-md font-bold text-primary tracking-tight">Felix Andergassen</span>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary font-bold transition-colors" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="leistungen.html">Leistungen</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="ueber-mich.html">Über mich</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors" href="kontakt.html">Kontakt</a>
+</nav>
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full text-label-md font-bold shadow-sm hover:opacity-80 transition-all active:scale-95" href="https://www.doctolib.de/heilpraktiker-fuer-physiotherapie/obertshausen/felix-andergassen?utm_campaign=website-button&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen">
+            Termin buchen
+        </a>
+</header>
+<!-- NavigationDrawer (Mobile) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col py-6 bg-surface w-4/5 max-w-sm rounded-r-xl shadow-xl -translate-x-full transition-transform duration-300 ease-in-out" id="nav-drawer">
+<div class="px-6 mb-8 flex justify-between items-center">
+<span class="text-headline-md font-headline-md text-primary font-bold">Physiotherapie</span>
+<button class="p-2" id="menu-close">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-1">
+<!-- Active State: Home -->
+<a class="bg-secondary-container text-on-secondary-container rounded-full px-4 py-3 mx-2 flex items-center gap-4 transition-colors" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-body-md font-body-md">Home</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-4 hover:bg-surface-container-highest rounded-full transition-colors" href="leistungen.html">
+<span class="material-symbols-outlined" data-icon="rehabilitation">restore</span>
+<span class="text-body-md font-body-md">Leistungen</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-4 hover:bg-surface-container-highest rounded-full transition-colors" href="ueber-mich.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-body-md font-body-md">Über mich</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 mx-2 flex items-center gap-4 hover:bg-surface-container-highest rounded-full transition-colors" href="kontakt.html">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="text-body-md font-body-md">Kontakt</span>
+</a>
+</nav>
+</aside>
+<div class="fixed inset-0 bg-black/40 z-[55] hidden opacity-0 transition-opacity duration-300" id="nav-overlay"></div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="px-4 py-stack-lg flex flex-col gap-8 max-w-4xl mx-auto">
+<div class="relative w-full aspect-[0.78] md:aspect-[1.5] rounded-xl overflow-hidden shadow-sm max-h-[500px]">
+<img alt="Felix Andergassen" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDug9f5AUN5xMri1d74vbXYDwk9TCAiowCao1l02nYUH0RAuIYtk2FNf6GLVi87oOgHJRZvH_giCV_95u3OjW2KTa2IJ308Oomwcz7A6x-SzqjKxyNQUmpYbL-1P2Lco63XbRfSqFdqCLLDrlUvk6ro1-_A3wL5QGrXMMk7tQvOUCwzax9byKPITAikCPvyn08s8fGIh_PGkX4KaAPOLyzwrpzr0v7k3JmoHkF5PyBpN6_rx5Pr4HS5FBolT5MXkTtzlPgnpD5UzLg">
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-semibold">Sektoraler Heilpraktiker für Physiotherapie</span>
+</div>
+<h1 class="text-headline-xl font-headline-xl text-on-surface leading-tight">
+                    Individuelle Physiotherapie für Ihre Gesundheit.
+                </h1>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">In Obertshausen unterstütze ich Sie mit fachlicher Expertise und Empathie bei der Förderung Ihrer körperlichen Funktionen.</p>
+<div class="pt-2">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary px-8 py-4 rounded-full text-label-md font-bold shadow-sm hover:shadow-md transition-all active:scale-95" href="leistungen.html">
+                        Leistungsspektrum
+                    </a>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="bg-surface-container-low px-4 py-section-padding max-w-4xl mx-auto rounded-xl mt-4" id="leistungen">
+<div class="flex flex-col gap-stack-md">
+<div class="flex flex-col gap-2">
+<span class="text-primary font-bold text-label-md tracking-widest uppercase">Expertise</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Meine Leistungen</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Service Card 1 -->
+<div class="bg-white p-6 rounded-xl border border-[#F5F1ED] shadow-sm hover:shadow-md transition-all group">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="manual_therapy">physical_therapy</span>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Manuelle Therapie</h3>
+<p class="text-body-md text-on-surface-variant">Spezialisierte Handgrifftechniken zur Mobilisation von Gelenken und Linderung von muskulären Verspannungen.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-white p-6 rounded-xl border border-[#F5F1ED] shadow-sm hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="fitness_center">fitness_center</span>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Krankengymnastik</h3>
+<p class="text-body-md text-on-surface-variant">Aktive und passive Bewegungsübungen zur Förderung der Beweglichkeit, Kraft und Koordination.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-white p-6 rounded-xl border border-[#F5F1ED] shadow-sm hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="water_drop">water_drop</span>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Lymphdrainage</h3>
+<p class="text-body-md text-on-surface-variant">Sanfte Entstauungstherapie zur Reduktion von Schwellungen und Unterstützung des Lymphsystems.</p>
+</div>
+<!-- Special Card -->
+<div class="bg-white p-6 rounded-xl border border-[#F5F1ED] shadow-sm hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="clinical_notes">clinical_notes</span>
+<h3 class="text-headline-md font-headline-md mb-2">Sektoraler Heilpraktiker</h3>
+<p class="text-body-md leading-relaxed text-on-surface-variant">Direkter Zugang zur Physiotherapie ohne ärztliche Verordnung. Ich kann Diagnosen stellen und Behandlungen direkt einleiten.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personal Section -->
+<!-- Contact Section -->
+<section class="px-4 py-section-padding bg-surface-container-highest max-w-4xl mx-auto rounded-xl mt-8" id="kontakt">
+<div class="flex flex-col gap-stack-md text-center">
+<h2 class="text-headline-lg font-headline-xl text-on-surface">Bereit für Ihren ersten Termin?</h2>
+<div class="flex flex-col gap-4 text-left">
+<!-- Doctolib Card -->
+<div class="bg-white p-6 rounded-xl shadow-sm flex flex-col gap-4 items-center text-center">
+<div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600" data-icon="calendar_month">calendar_month</span>
+</div>
+<div>
+<h4 class="text-headline-md font-bold">Online Buchung</h4>
+<p class="text-body-md text-on-surface-variant">Buchen Sie bequem über Doctolib</p>
+</div>
+<a class="w-full bg-primary text-on-primary py-4 rounded-full font-bold shadow-sm active:scale-95 transition-all" href="https://www.doctolib.de/heilpraktiker-fuer-physiotherapie/obertshausen/felix-andergassen?utm_campaign=website-button&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen">
+                            Termin buchen
+                        </a>
+</div>
+<!-- Contact Details -->
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col gap-6">
+<!-- WhatsApp -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-secondary-container text-secondary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant">WhatsApp Business</span>
+<a class="text-body-md font-bold text-on-surface" href="tel:+4915129744965">+49 1512 9744965</a>
+<span class="text-label-sm text-outline">(Nur WhatsApp Business Kontakt)</span>
+</div>
+</div>
+<!-- Email -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-surface-container-high text-primary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant">E-Mail</span>
+<a class="text-body-md font-bold text-on-surface" href="mailto:felix@physioandergassen.de">felix@physioandergassen.de</a>
+</div>
+</div>
+<!-- Hours -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-tertiary-fixed text-tertiary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-sm text-on-surface-variant">Öffnungszeiten</span>
+<span class="text-body-md font-bold text-on-surface">Freitag: 07:00 - 16:00 Uhr</span>
+<span class="text-label-sm text-outline">Termine nach Vereinbarung</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center gap-gutter px-4 py-stack-lg bg-surface-container-low border-t border-outline-variant mt-12">
+<span class="text-label-md font-semibold text-on-surface">Felix Andergassen Physiotherapie | Obertshausen</span>
+<div class="flex gap-4 flex-wrap justify-center">
+<a class="text-on-surface-variant text-label-sm hover:text-primary transition-colors" href="https://itrk.legal/1z14.0.18aZ-de.html">Impressum</a>
+<a class="text-on-surface-variant text-label-sm hover:text-primary transition-colors" href="https://itrk.legal/1z14.8V.18aZ.html">Datenschutz</a>
+<a class="text-on-surface-variant text-label-sm hover:text-primary transition-colors" href="https://www.doctolib.de/heilpraktiker-fuer-physiotherapie/obertshausen/felix-andergassen?utm_campaign=website-button&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen">Doctolib</a>
+</div>
+<div class="pt-4 border-t border-outline-variant w-full text-center">
+<span class="text-label-sm text-outline-variant">© 2026 Felix Andergassen Physiotherapie.</span>
+</div>
+</footer>
+<!-- Scripts for Interactions -->
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const navDrawer = document.getElementById('nav-drawer');
+        const navOverlay = document.getElementById('nav-overlay');
+
+        function toggleMenu() {
+            const isOpen = !navDrawer.classList.contains('-translate-x-full');
+            if (isOpen) {
+                navDrawer.classList.add('-translate-x-full');
+                navOverlay.classList.add('hidden');
+                navOverlay.classList.remove('opacity-100');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                navDrawer.classList.remove('-translate-x-full');
+                navOverlay.classList.remove('hidden');
+                setTimeout(() => navOverlay.classList.add('opacity-100'), 10);
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
+
+        // Close drawer on link click
+        navDrawer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body></html>

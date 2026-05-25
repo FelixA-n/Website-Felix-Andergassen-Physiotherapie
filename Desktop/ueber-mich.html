@@ -1,0 +1,240 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="de" style=""><head>
+<meta charset="utf-8">
+<!-- Weiche: Falls ein Handy direkt auf der Desktop-Seite landet -->
+<script>
+    if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        var page = window.location.pathname.split("/").pop();
+        // Falls die Adresse ganz nackt ist, leite zur index.html um
+        if (!page) page = "index.html"; 
+        window.location.replace("../mobile/" + page);
+    }
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#214f3d",
+                    "outline-variant": "#c0c7cd",
+                    "surface-container-low": "#eef5f7",
+                    "on-primary-fixed": "#001e2b",
+                    "surface-variant": "#dde4e6",
+                    "primary-container": "#4a7c96",
+                    "tertiary-fixed-dim": "#cfc5b9",
+                    "secondary-fixed-dim": "#a1d1b9",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "secondary": "#3a6754",
+                    "on-error": "#ffffff",
+                    "tertiary": "#635c52",
+                    "surface-container": "#e8eff1",
+                    "outline": "#71787d",
+                    "surface-container-highest": "#dde4e6",
+                    "secondary-fixed": "#bcedd5",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#41484c",
+                    "on-background": "#161d1f",
+                    "primary-fixed-dim": "#9bcdea",
+                    "on-primary-container": "#ffffff",
+                    "primary-fixed": "#c2e8ff",
+                    "surface-tint": "#30647d",
+                    "on-tertiary-fixed": "#1f1b13",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e2e9ec",
+                    "surface-dim": "#d4dbdd",
+                    "surface": "#f4fafd",
+                    "secondary-container": "#b9ebd2",
+                    "on-tertiary-container": "#ffffff",
+                    "inverse-primary": "#9bcdea",
+                    "on-primary-fixed-variant": "#124c64",
+                    "on-secondary-container": "#3e6b58",
+                    "tertiary-container": "#7c756a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#4c463c",
+                    "inverse-on-surface": "#ebf2f4",
+                    "on-secondary-fixed": "#002115",
+                    "tertiary-fixed": "#ebe1d4",
+                    "surface-bright": "#f4fafd",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#161d1f",
+                    "error-container": "#ffdad6",
+                    "primary": "#2f637c",
+                    "inverse-surface": "#2b3234",
+                    "background": "#f4fafd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-padding": "80px",
+                    "stack-sm": "8px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px"
+            },
+            "fontFamily": {
+                    "label-md": ["manrope"],
+                    "headline-lg": ["manrope"],
+                    "headline-xl": ["manrope"],
+                    "body-md": ["manrope"],
+                    "body-lg": ["manrope"],
+                    "label-sm": ["manrope"],
+                    "headline-md": ["manrope"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container" data-mode="connect" style="transform: scale(0.9999); transform-origin: top center;">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md docked full-width top-0 sticky z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<nav class="flex justify-between items-center px-12 py-8 max-w-[1600px] mx-auto"><div class="text-3xl font-bold tracking-tight text-cyan-900">Felix Andergassen Physiotherapie</div><div class="hidden md:flex items-center gap-12 font-manrope text-lg font-medium tracking-wide"><a class="text-slate-600 hover:text-cyan-700 transition-colors" href="index.html">Home</a><a class="text-slate-600 hover:text-cyan-700 transition-colors" href="leistungen.html">Leistungen</a><a class="text-cyan-700 border-b-2 border-cyan-700 pb-1" href="ueber-mich.html">Über mich</a><a class="text-slate-600 hover:text-cyan-700 transition-colors" href="kontakt.html">Kontakt</a></div><div class="flex items-center gap-4"><a class="bg-primary text-on-primary px-8 py-3 rounded-xl font-label-md hover:bg-primary-container transition-all shadow-sm" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" target="_blank">Termin buchen</a></div></nav>
+</header>
+<main>
+<!-- Hero / Introduction Section -->
+<section class="pt-section-padding pb-stack-lg px-6">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 space-y-stack-md">
+<span class="font-label-sm text-secondary uppercase tracking-widest bg-secondary-container/30 px-3 py-1 rounded-full">PHYSIOTHERAPeut und Sektoraler Heilpraktiker</span><p class="font-body-lg text-on-surface-variant mt-4">Individuelle Behandlungskonzepte für nachhaltige Gesundheit und Mobilität. Seit über 10 Jahren begleite ich Patienten auf ihrem Weg zu besserer Lebensqualität.</p>
+<h1 class="font-headline-xl text-on-surface leading-tight">
+                        Felix Andergassen – Ihr Partner für nachhaltige Gesundheit.
+                    </h1>
+
+</div>
+<div class="lg:col-span-5 flex justify-center lg:justify-end">
+<div class="relative group">
+  <div class="absolute -inset-4 bg-primary-container/10 rounded-full blur-2xl group-hover:bg-primary-container/20 transition-all"></div>
+  <img class="relative z-10 w-80 h-80 md:w-96 md:h-96 object-cover rounded-xl shadow-xl border-4 border-white" alt="Portrait von Felix Andergassen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApyIjolQtnWqyuHXd4bl-HIt5UOAN9a2jeDDNSBQl3lDAUl4zeswwOIhI1mWQojxSwNj1NZanb0U8SmlugfIYL_GKSnc3y3bCcUT341cQ3eVps3GEEddTxkvDMgPtZDMg-bWoynsVSLUWmI_EZ1hTVVX_xdReWP5uQp2L5SfmxZhgcTQrKvWs-WeNlfwjV7iryxncHA7-1_DwTDchtJIhcA4ySpEM_GjUPRfIqD2mK4HymlAo07skp6u97dtT2WIu28pXFfdGJ7JmgPw">
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Journey (Timeline Style) -->
+<section class="py-section-padding bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-primary mb-4">Vita &amp; Akademischer Weg</h2>
+<div class="h-1 w-20 bg-primary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter relative">
+<!-- Connector line for desktop -->
+<div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-outline-variant/30 -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20 relative z-10 hover:shadow-md transition-shadow">
+<div class="bg-primary-container text-white w-10 h-10 rounded-full flex items-center justify-center mb-6 font-headline-md">1</div>
+<h3 class="font-headline-md text-on-surface mb-2">Physiotherapie 2010</h3>
+<p class="font-body-md text-on-surface-variant">Studium der Physiotherapie (Bachelor Abschluss) an der Claudiana-Landesfachhochschule für Gesundheitsberufe in Bozen, Italien.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20 relative z-10 hover:shadow-md transition-shadow">
+<div class="bg-primary-container text-white w-10 h-10 rounded-full flex items-center justify-center mb-6 font-headline-md">2</div>
+<h3 class="font-headline-md text-on-surface mb-2">Fitness &amp; Training 2011</h3>
+<p class="font-body-md text-on-surface-variant">Personal Fitness Trainer (ISSA Italia) CFT 3 in Mailand, Italien.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20 relative z-10 hover:shadow-md transition-shadow">
+<div class="bg-primary-container text-white w-10 h-10 rounded-full flex items-center justify-center mb-6 font-headline-md">3</div>
+<h3 class="font-headline-md text-on-surface mb-2">Osteopathische Qualifikation 2018</h3>
+<p class="font-body-md text-on-surface-variant">Abgeschlossene Ausbildung in der Osteopathie an der SFO – Schule für Osteopathie GmbH in Frankfurt am Main.</p>
+</div>
+<!-- Step 4 -->
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20 relative z-10 hover:shadow-md transition-shadow">
+<div class="bg-primary-container text-white w-10 h-10 rounded-full flex items-center justify-center mb-6 font-headline-md">4</div>
+<h3 class="font-headline-md text-on-surface mb-2">Praxis &amp; Erfahrung</h3>
+<p class="font-body-md text-on-surface-variant">Berufserfahrung im Bereich Chirurgie und Orthopädie.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertise & Specializations (Bento Grid Style) -->
+<section class="py-section-padding px-6 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-6">
+<div>
+<h2 class="font-headline-lg text-on-surface">Weiterbildungen &amp; Expertise</h2>
+<p class="font-body-lg text-on-surface-variant mt-2">Spezialisierte Kenntnisse für eine umfassende Betreuung.</p>
+</div>
+<div class="bg-secondary-container/20 border border-secondary/20 px-6 py-4 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="translate">translate</span>
+<div>
+<p class="font-label-sm text-secondary uppercase">Sprachkenntnisse</p>
+<p class="font-body-md font-semibold text-on-surface"></p><div class="flex flex-col"><span class="">Deutsch<br>Englisch</span>
+<span class="">Italienisch</span></div><p></p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-low p-8 rounded-xl border border-outline-variant/20 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-4 block text-4xl" data-icon="healing">healing</span>
+<h3 class="font-headline-md mb-4">Manuelle Therapie</h3>
+<p class="font-body-md text-on-surface-variant">Gezielte Behandlung von Funktionsstörungen des Bewegungsapparates (Gelenke, Muskeln und Nerven).</p>
+</div>
+</div>
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/40">
+<span class="material-symbols-outlined text-secondary mb-4 block text-4xl" data-icon="fitness_center">fitness_center</span>
+<h3 class="font-headline-md mb-4">KGG</h3>
+<p class="font-body-md text-on-surface-variant">Krankengymnastik am Gerät zur Verbesserung von Kraft, Ausdauer und Beweglichkeit.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/40">
+<span class="material-symbols-outlined text-secondary mb-4 block text-4xl" data-icon="water_drop">water_drop</span>
+<h3 class="font-headline-md mb-4">MLD nach Dr. Vodder</h3>
+<p class="font-body-md text-on-surface-variant">Manuelle Lymphdrainage zur Entstauung von Gewebe und Unterstützung des Lymphsystems.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-4 block text-4xl" data-icon="layers">layers</span>
+<h3 class="font-headline-md mb-4">Typaldos (FDM)</h3>
+<p class="font-body-md text-on-surface-variant">Fasziendistorsionsmodell zur Behandlung von Schmerzen durch Korrektur von Faszienverformungen.</p>
+</div>
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/40">
+<span class="material-symbols-outlined text-secondary mb-4 block text-4xl" data-icon="back_hand">back_hand</span>
+<h3 class="font-headline-md mb-4">Wirbeltherapie nach DORN</h3>
+<p class="font-body-md text-on-surface-variant">Sanfte Wirbel- und Gelenkbehandlung zur Korrektur von Fehlstellungen der Wirbelsäule.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding px-6">
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-200 bg-slate-50">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center px-12 py-24 gap-12 container-xl mx-auto">
+<div class="flex flex-col gap-6"><div class="text-3xl font-bold text-slate-800">Felix Andergassen Physiotherapie</div><p class="font-manrope text-base text-slate-500">Felix Andergassen Physiotherapie | Obertshausen</p><div class="flex flex-col gap-4 mt-6"><a class="font-manrope text-lg text-slate-500 hover:text-primary transition-colors flex items-center gap-4 cursor-default" href="javascript:void(0)"><span class="material-symbols-outlined text-2xl">sms</span> +49 1512 9744965 (Nur WhatsApp Business Kontakt)</a><a class="font-manrope text-lg text-slate-500 hover:text-primary transition-colors flex items-center gap-4" href="mailto:felix@physioandergassen.de"><span class="material-symbols-outlined text-2xl">mail</span> felix@physioandergassen.de</a><a class="font-manrope text-lg text-slate-500 hover:text-primary transition-colors flex items-center gap-4" href="https://www.doctolib.de/heilpraktiker-fur-physiotherapie/obertshausen/felix-andergassen/booking?source=external_referral&amp;utm_campaign=website-button&amp;utm_source=felix-andergassen-website-button&amp;utm_medium=referral&amp;utm_content=withoutpreview-blue-floating-bottom-right&amp;utm_term=felix-andergassen" target="_blank"><span class="material-symbols-outlined text-2xl">calendar_month</span> Doctolib</a></div></div>
+<div class="flex flex-wrap gap-x-16 gap-y-8 font-manrope text-lg text-slate-500"><a class="hover:underline decoration-cyan-500 underline-offset-8 transition-opacity opacity-80 hover:opacity-100" href="https://itrk.legal/1z14.0.18aZ-de.html">Impressum</a><a class="hover:underline decoration-cyan-500 underline-offset-8 transition-opacity opacity-80 hover:opacity-100" href="https://itrk.legal/1z14.8V.18aZ.html">Datenschutz</a><a class="hover:underline decoration-cyan-500 underline-offset-8 transition-opacity opacity-80 hover:opacity-100 font-semibold text-cyan-700" href="kontakt.html">Kontakt</a></div>
+</div>
+</footer>
+
+
+
+
+</body></html>
